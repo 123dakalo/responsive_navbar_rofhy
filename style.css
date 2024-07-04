@@ -1,0 +1,101 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+  }
+  body {
+    background: transparent; /* Make it white if you need */
+    color: #fcbe24;
+    margin: 0;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  header{
+    height: 80px;
+    background-color: #080710;
+  /*   background-color: aliceblue; */
+    padding: 0 40px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+  .nav_ul{
+    display: flex;
+    gap: 20px;
+     
+  }
+  .li_ul, a{
+    list-style: none;
+    text-decoration: none;
+    color: #666666;
+  }
+  .register{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .btn2{
+    padding: 10px 25px;
+    background-color: #fcbe24;
+    border-radius: 4px;
+    color: white;
+  }
+  .menu{
+    display: none;
+    cursor: pointer;
+  }
+  .bars{
+    margin: 5px auto;
+    width: 25px;
+    background-color: #fcbe24;
+    height: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  @media (max-width: 768px){
+    .menu{
+      display: block;
+      align-items: center;
+    }
+    .menu.active .bars:nth-child(2){
+      opacity: 0;
+    }
+     .menu.active .bars:nth-child(1){
+      transform: translateY(8px) rotate(45deg);
+    }
+     .menu.active .bars:nth-child(3){
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    nav{
+      position: fixed;
+      top: 75px;
+      left: 100%;
+      flex-direction: column;
+      margin: 5px 0;
+      transition: 0.5s;
+      background-color: #d9d9d9;
+      width: 100%;
+    }
+    nav.active{
+      left: 0;
+    }
+    
+    .nav_ul{
+      flex-direction: column;
+      margin: 10px 0;
+    }
+    .register{
+      flex-direction: column;
+      margin: 0 0 20px 0;
+      gap: 20px;
+    }
+  }
